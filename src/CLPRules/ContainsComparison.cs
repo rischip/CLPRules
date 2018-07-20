@@ -48,7 +48,7 @@ namespace CLPRules
             return false;
         }
         /// <summary>
-        /// Case insensitive string comparison 
+        /// Case sensitive string comparison 
         /// </summary>
         /// <param name="a">Source string that NOT contains b</param>
         /// <param name="b">String that is NOT contained in source string</param>
