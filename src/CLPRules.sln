@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLPRules", "CLPRules\CLPRules.csproj", "{57359F32-752F-4131-954F-EBC90CD11469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLPRules.Tests", "CLPRules.Tests\CLPRules.Tests.csproj", "{07B56BB3-2FBF-4D9D-B2ED-2B320C75B0BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57359F32-752F-4131-954F-EBC90CD11469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57359F32-752F-4131-954F-EBC90CD11469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57359F32-752F-4131-954F-EBC90CD11469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57359F32-752F-4131-954F-EBC90CD11469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B56BB3-2FBF-4D9D-B2ED-2B320C75B0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B56BB3-2FBF-4D9D-B2ED-2B320C75B0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B56BB3-2FBF-4D9D-B2ED-2B320C75B0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B56BB3-2FBF-4D9D-B2ED-2B320C75B0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79978EDC-912D-4E9D-B1B2-72C6F16131BA}
+	EndGlobalSection
+EndGlobal
