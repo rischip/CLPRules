@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CLPComparisons;
+using CLPInterfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CLPRules.Tests
@@ -12,18 +13,21 @@ namespace CLPRules.Tests
             IRuleComparer ruleComparer = new RuleComparer();
             Assert.IsTrue(ruleComparer.ContainsCI<string>("wwecoimwciowmecowmicew", "wwecoimwcIOwmecowmicew"));
         }
+
         [TestMethod]
         public void TestRuleContainsCS()
         {
             IRuleComparer ruleComparer = new RuleComparer();
             Assert.IsTrue(ruleComparer.ContainsCS<string>("wwecoimwciowmecowmicew", "wwecoimwciowmecowmicew"));
         }
+
         [TestMethod]
         public void TestRuleNotContainsCI()
         {
             IRuleComparer ruleComparer = new RuleComparer();
             Assert.IsTrue(ruleComparer.NotContainsCI<string>("wecoimwciowmecowmicew", "wwecoimwcIOwmecowmicew"));
         }
+
         [TestMethod]
         public void TestRuleNotContainsCS()
         {

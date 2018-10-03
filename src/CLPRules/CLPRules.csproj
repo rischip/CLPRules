@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CLPRules</RootNamespace>
     <AssemblyName>CLPRules</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,15 +45,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NotEqualToComparison.cs" />
-    <Compile Include="GreaterThanOrEqualToComparison.cs" />
-    <Compile Include="LessThanOrEqualToComparison.cs" />
-    <Compile Include="LessThanComparison.cs" />
-    <Compile Include="GreaterThanComparison.cs" />
-    <Compile Include="RuleComparer.cs" />
-    <Compile Include="EqualToComparison.cs" />
-    <Compile Include="ContainsComparison.cs" />
+    <Compile Include="BaseRule.cs" />
+    <Compile Include="ExcludeRule.cs" />
+    <Compile Include="ErrorCheckRule.cs" />
+    <Compile Include="IncludeRule.cs" />
+    <Compile Include="RuleAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleInstantiations.cs" />
+    <Compile Include="RuleList.cs" />
+    <Compile Include="RuleSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CLPActions\CLPActions.csproj">
+      <Project>{BAF40AF0-CFD2-4FB6-8EE4-4F5FB4730FF2}</Project>
+      <Name>CLPActions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CLPClasses\CLPClasses.csproj">
+      <Project>{71460045-4639-4798-9D33-ECE77372E881}</Project>
+      <Name>CLPClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CLPComparisons\CLPComparisons.csproj">
+      <Project>{B7065E46-288A-40FA-8D79-FBAF0AC5B126}</Project>
+      <Name>CLPComparisons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CLPInterfaces\CLPInterfaces.csproj">
+      <Project>{fc854455-6afe-4169-a2ab-e825bf88f6fd}</Project>
+      <Name>CLPInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

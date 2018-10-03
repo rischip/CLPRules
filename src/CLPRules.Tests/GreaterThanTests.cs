@@ -1,4 +1,6 @@
 ﻿using System;
+using CLPComparisons;
+using CLPInterfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CLPRules.Tests
@@ -13,49 +15,58 @@ namespace CLPRules.Tests
             Assert.IsTrue(ruleComparer.GreaterThan<int>(12, 10));
             Assert.IsFalse(ruleComparer.GreaterThan<int>(10, 12));
         }
+
         [TestMethod]
         public void TestGreaterThanInt()
         {
             Assert.IsTrue(GreaterThanComparison.GreaterThan(1289, 128));
         }
+
         [TestMethod]
         public void TestGreaterThanUInt32()
         {
-            Assert.IsTrue(GreaterThanComparison.GreaterThan(UInt32.MaxValue, UInt32.MinValue));
+            Assert.IsTrue(GreaterThanComparison.GreaterThan(uint.MaxValue, uint.MinValue));
         }
+
         [TestMethod]
         public void TestGreaterThanInt64()
         {
-            Assert.IsTrue(GreaterThanComparison.GreaterThan(Int64.MaxValue, Int64.MinValue));
+            Assert.IsTrue(GreaterThanComparison.GreaterThan(long.MaxValue, long.MinValue));
         }
+
         [TestMethod]
         public void TestGreaterThanUInt64()
         {
-            Assert.IsTrue(GreaterThanComparison.GreaterThan(UInt64.MaxValue, UInt64.MinValue));
+            Assert.IsTrue(GreaterThanComparison.GreaterThan(ulong.MaxValue, ulong.MinValue));
         }
+
         [TestMethod]
         public void TestGreaterThanDouble()
         {
             Assert.IsTrue(GreaterThanComparison.GreaterThan(1289.00, 128.00));
         }
+
         [TestMethod]
         public void TestGreaterThanFloat()
         {
             Assert.IsTrue(GreaterThanComparison.GreaterThan(1289.00F, 128.00F));
         }
+
         [TestMethod]
         public void TestGreaterThanChar()
         {
             Assert.IsTrue(GreaterThanComparison.GreaterThan('h', 'g'));
         }
+
         [TestMethod]
         public void TestGreaterThanByte()
         {
-            Byte a = Convert.ToByte("2");
-            Byte b = Convert.ToByte("1");
+            var a = Convert.ToByte("2");
+            var b = Convert.ToByte("1");
 
             Assert.IsTrue(GreaterThanComparison.GreaterThan(a, b));
         }
+
         [TestMethod]
         public void TestGreaterThanIntNegative()
         {

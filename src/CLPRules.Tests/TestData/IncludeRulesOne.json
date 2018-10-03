@@ -1,0 +1,9 @@
+[
+  {
+    "comparisonOperator": "!=",
+    "comparisonType": "int",
+    "CompareRuleObject": "ShpID",
+    "CompareSourceObject": "12",
+    "TrueActions": [{ "IncludeAction": null }]
+  }
+]
