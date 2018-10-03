@@ -1,4 +1,5 @@
 ﻿using CLPComparisons;
+using CLPInterfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CLPRules.Tests
@@ -9,12 +10,14 @@ namespace CLPRules.Tests
         [TestMethod]
         public void TestMatch()
         {
-            Assert.IsTrue(RegexComparison.Match("oemcopiwecmwc", @"\boem\w*\b"));
-            Assert.IsFalse(RegexComparison.Match("oemcopiwecmwc", @"\boemd\w*\b"));
-            Assert.IsTrue(RegexComparison.Match("oemcopiwecmwc;", @"^oem\w*wec\w*\;$"));
-            Assert.IsFalse(RegexComparison.Match("oemcopiwecmwc", @"^oem\w*wec\w*\;$"));
-            Assert.IsTrue(RegexComparison.Match("oemcopiwecmwc", @"(?:copiwec)"));
-            Assert.IsFalse(RegexComparison.Match("oemcopiwecmwc", @"(?:oemI)"));
+            IRuleComparer ruleComparer = new RuleComparer();
+            Assert.IsTrue(ruleComparer.Match<string>("oemcopiwecmwc", @"\boem\w*\b"));
+            Assert.IsTrue(ruleComparer.Match<string>("oemcopiwecmwc", @"\boem\w*\b"));
+            Assert.IsFalse(ruleComparer.Match<string>("oemcopiwecmwc", @"\boemd\w*\b"));
+            Assert.IsTrue(ruleComparer.Match<string>("oemcopiwecmwc;", @"^oem\w*wec\w*\;$"));
+            Assert.IsFalse(ruleComparer.Match<string>("oemcopiwecmwc", @"^oem\w*wec\w*\;$"));
+            Assert.IsTrue(ruleComparer.Match<string>("oemcopiwecmwc", @"(?:copiwec)"));
+            Assert.IsFalse(ruleComparer.Match<string>("oemcopiwecmwc", @"(?:oemI)"));
         }
     }
 }
