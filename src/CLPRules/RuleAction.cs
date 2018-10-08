@@ -41,7 +41,8 @@ namespace CLPRules
                 "char",
                 "byte",
                 "bool",
-                "Guid"
+                "Guid",
+                "DateTime"
             };
         }
     }

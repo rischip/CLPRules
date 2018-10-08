@@ -93,6 +93,14 @@ namespace CLPComparisons
             return false;
         }
 
+        public static bool EqualTo(object a, object b)
+        {
+            if (a == b)
+                return true;
+
+            return false;
+        }
+
         public static bool EqualTo(DateTime a, string b)
         {
             var bee = Utility.ParseBDate(b);

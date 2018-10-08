@@ -46,7 +46,7 @@ namespace CLPRules
         public bool Evaluate()
         {
             var comparisonExecutor = new ComparisonExecutor(ComparisonOperator, ComparisonType,
-                ((JObject) CompareRuleObject).Properties().Last().Value.ToString(), CompareSourceObject);
+                ((JObject) CompareRuleObject).Properties().Last().Value.ToObject(typeof(object)), CompareSourceObject);
             EvaluationResult = comparisonExecutor.ExecuteComparison();
             return EvaluationResult;
         }
@@ -55,7 +55,7 @@ namespace CLPRules
         {
             var jObject = JObject.FromObject(CompareRuleObject);
 
-            foreach (var property in jObject) Debug.WriteLine(property.Key + " - " + property.Value);
+            //foreach (var property in jObject) Debug.WriteLine(property.Key + " - " + property.Value);
 
             var propertyName = jObject.Properties().First().Value.ToString();
 

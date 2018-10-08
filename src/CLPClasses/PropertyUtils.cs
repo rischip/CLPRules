@@ -65,7 +65,7 @@ namespace CLPClasses
         }
         public static object GetPropertyValueByName(object src, string propertyName)
         {
-            object propValue = new object();
+            KeyValuePair<string, object> propValue = new KeyValuePair<string, object>();
 
             if (src.GetType().ToString() == "System.Dynamic.ExpandoObject")
             {
@@ -73,7 +73,13 @@ namespace CLPClasses
                 {
                     if (pair.Key.ToLower() == propertyName.ToLower())
                     {
-                        propValue = pair.Value.ToString();
+                        if (pair.Value == null)
+                        {
+                            propValue = new KeyValuePair<string, object>(propertyName, null);
+                        }
+                        else
+                            propValue = new KeyValuePair<string, object>(propertyName, pair.Value.ToString());
+                        //propValue = pair.Value.ToString();
                     }
                 }
 
@@ -86,16 +92,23 @@ namespace CLPClasses
                     {
                         try
                         {
-                            propValue = propertyInfo.GetValue(src);
+                            if (propertyInfo.GetValue(src) == null)
+                            {
+                                propValue = new KeyValuePair<string, object>(propertyName, null);
+                            }
+                            else
+                                propValue = new KeyValuePair<string, object>(propertyName, propertyInfo.GetValue(src));
                         }
+#pragma warning disable 168
                         catch (Exception ex)
+#pragma warning restore 168
                         {
                         }
                     }
                 }
             }
 
-            return propValue;
+            return (object)propValue.Value;
         }
     }
 }

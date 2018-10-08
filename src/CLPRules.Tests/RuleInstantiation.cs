@@ -15,7 +15,7 @@ namespace CLPRules.Tests
             var file = new FileInfo(path);
             var json = File.ReadAllText(file.FullName);
 
-            var activeRuleSets = RuleInstantiations.ParseRuleSets(json);
+            var activeRuleSets = RuleInstantiations.ParseRuleSets(ref json);
 
             var ruleSet = new RuleList {RuleSets = activeRuleSets};
         }
@@ -27,7 +27,7 @@ namespace CLPRules.Tests
             var file = new FileInfo(path);
             var json = File.ReadAllText(file.FullName);
 
-            var activeDataSets = RuleInstantiations.ParseDataSet(json);
+            var activeDataSets = RuleInstantiations.ParseDataSet(ref json);
         }
 
         [TestMethod]

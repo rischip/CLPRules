@@ -69,13 +69,13 @@ namespace CLPComparisons
                 throw new ArgumentNullException($"ComparisonOperator",
                     "ComparisonOperator cannot be null, empty or whitespace.");
 
-            if (string.IsNullOrWhiteSpace(CompareRuleObject.ToString()))
-                throw new ArgumentNullException($"CompareRuleObject",
-                    "CompareRuleObject cannot be null, empty or whitespace.");
+            //if (string.IsNullOrWhiteSpace(CompareRuleObject.ToString()))
+            //    throw new ArgumentNullException($"CompareRuleObject",
+            //        "CompareRuleObject cannot be null, empty or whitespace.");
 
-            if (string.IsNullOrWhiteSpace(CompareSourceObject.ToString()))
-                throw new ArgumentNullException($"CompareSourceObject",
-                    "CompareSourceObject cannot be null, empty or whitespace.");
+            //if (string.IsNullOrWhiteSpace(CompareSourceObject.ToString()))
+            //    throw new ArgumentNullException($"CompareSourceObject",
+            //        "CompareSourceObject cannot be null, empty or whitespace.");
         }
 
         private bool DoComparison<T>()

@@ -31,7 +31,7 @@ namespace CLPRules
         {
             var message =
                 $"The error check rule reported the following error in the data. The rule params are ComparisonOperator {ComparisonOperator}, " +
-                $"ComparisonType {ComparisonType}, CompareRuleObject Field {((JObject) CompareRuleObject).Properties().First().Value}, CompareRuleObject Value {((JObject) CompareRuleObject).Properties().Last().Value}, CompareSourceObject {CompareSourceObject}, " +
+                $"ComparisonType {ComparisonType}, CompareRuleObject Field {((JObject) CompareRuleObject).Properties().First().Value.Value<string>()}, CompareRuleObject Value {((JObject) CompareRuleObject).Properties().Last().Value.Value<string>() ?? "null".ToString()}, CompareSourceObject {CompareSourceObject ?? "null".ToString()}, " +
                 $"ExpectedResult {ExpectedResult}, EvaluationResult {EvaluationResult}.";
             throw new ErrorCheckException(ErrorMessage + " " + message);
 

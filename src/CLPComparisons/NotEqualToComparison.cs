@@ -85,6 +85,14 @@ namespace CLPComparisons
             return false;
         }
 
+        public static bool NotEqualTo(object a, object b)
+        {
+            if (a != b)
+                return true;
+
+            return false;
+        }
+
         public static bool NotEqualTo(Guid a, Guid b)
         {
             if (a != b)

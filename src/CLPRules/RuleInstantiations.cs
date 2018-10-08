@@ -12,11 +12,11 @@ namespace CLPRules
 {
     public class RuleInstantiations
     {
-        public static List<RuleSet> ParseRuleSets(string json)
+        public static List<RuleSet> ParseRuleSets(ref string json)
         {
 
-            dynamic d = JsonConvert.DeserializeObject<dynamic>(json);
-            string v = d.ToString();
+            //dynamic d = JsonConvert.DeserializeObject<dynamic>(json);
+            //string v = d.ToString();
 
             JObject parsed = JObject.Parse(json);
             JArray array = (JArray) parsed["RuleList"];
@@ -64,7 +64,7 @@ namespace CLPRules
             return activeRuleSets;
         }
 
-        public static List<ExpandoObject> ParseDataSet(string json)
+        public static List<ExpandoObject> ParseDataSet(ref string json)
         {
 
             JObject parsed = JObject.Parse(json);

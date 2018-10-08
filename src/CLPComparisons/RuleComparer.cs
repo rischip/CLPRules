@@ -7,30 +7,47 @@ namespace CLPComparisons
     {
         public bool ContainsCI<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(string)) return ContainsComparison.ContainsCI(a.ToString(), b.ToString());
             return false;
         }
 
         public bool ContainsCS<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(string)) return ContainsComparison.ContainsCS(a.ToString(), b.ToString());
             return false;
         }
 
         public bool NotContainsCI<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(string)) return ContainsComparison.NOTContainsCI(a.ToString(), b.ToString());
             return false;
         }
 
         public bool NotContainsCS<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(string)) return ContainsComparison.NOTContainsCS(a.ToString(), b.ToString());
             return false;
         }
 
         public bool EqualTo<T>(object a, object b)
         {
+
+
+            if (a == null || b == null)
+                return EqualToComparison.EqualTo(a, b);
+
             if (typeof(T) == typeof(string)) return EqualToComparison.EqualTo(a.ToString(), b.ToString());
             if (typeof(T) == typeof(int)) return EqualToComparison.EqualTo(Convert.ToInt32(a), Convert.ToInt32(b));
             if (typeof(T) == typeof(long)) return EqualToComparison.EqualTo(Convert.ToInt64(a), Convert.ToInt64(b));
@@ -51,6 +68,9 @@ namespace CLPComparisons
 
         public bool GreaterThan<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(int))
                 return GreaterThanComparison.GreaterThan(Convert.ToInt32(a), Convert.ToInt32(b));
             if (typeof(T) == typeof(long))
@@ -73,6 +93,9 @@ namespace CLPComparisons
 
         public bool GreaterThanOrEqualTo<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(int))
                 return GreaterThanOrEqualToComparison.GreaterThanOrEqualTo(Convert.ToInt32(a), Convert.ToInt32(b));
             if (typeof(T) == typeof(long))
@@ -97,6 +120,11 @@ namespace CLPComparisons
 
         public bool LessThan<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
+            if (a == null || b == null)
+                return false;
             if (typeof(T) == typeof(int)) return LessThanComparison.LessThan(Convert.ToInt32(a), Convert.ToInt32(b));
             if (typeof(T) == typeof(long)) return LessThanComparison.LessThan(Convert.ToInt64(a), Convert.ToInt64(b));
             if (typeof(T) == typeof(uint)) return LessThanComparison.LessThan(Convert.ToUInt32(a), (uint) b);
@@ -115,6 +143,9 @@ namespace CLPComparisons
 
         public bool LessThanOrEqualTo<T>(object a, object b)
         {
+            if (a == null || b == null)
+                return false;
+
             if (typeof(T) == typeof(int))
                 return LessThanOrEqualToComparison.LessThanOrEqualTo(Convert.ToInt32(a), Convert.ToInt32(b));
             if (typeof(T) == typeof(long))
@@ -138,7 +169,13 @@ namespace CLPComparisons
 
         public bool NotEqualTo<T>(object a, object b)
         {
-            if (typeof(T) == typeof(string)) return NotEqualToComparison.NotEqualTo(a.ToString(), b.ToString());
+
+
+            if (a == null || b == null)
+                return NotEqualToComparison.NotEqualTo(a, b);
+
+            if (typeof(T) == typeof(string))
+                return NotEqualToComparison.NotEqualTo(a.ToString(), b.ToString());
             if (typeof(T) == typeof(int))
                 return NotEqualToComparison.NotEqualTo(Convert.ToInt32(a), Convert.ToInt32(b));
             if (typeof(T) == typeof(long))

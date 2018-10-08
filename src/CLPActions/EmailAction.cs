@@ -10,7 +10,7 @@ namespace CLPActions
     {
         private MailMessage _mail;
         private readonly SmtpClient _client = new SmtpClient();
-        private readonly string _mailFrom = "EDIRulesEngine@xpo.com"; //"noreply@xpo.com"
+        private readonly string _mailFrom = "NoReply@gmail.com";
 
         public string MailTo { get; set; }
         public string MailBody { get; set; }
@@ -37,9 +37,9 @@ namespace CLPActions
             _client.Port = 25;
             _client.DeliveryMethod = SmtpDeliveryMethod.Network;
             _client.UseDefaultCredentials = false;
-            _client.Host = "xpoemail2.xpo.pvt";
+            _client.Host = "smtp.gmail.com";
             if (string.IsNullOrWhiteSpace(MailTo))
-                MailTo = "Christopher.Pelphrey@xpo.com";
+                MailTo = "riscchip@gmail.com";
             _mail = new MailMessage(_mailFrom, MailTo);
             if (string.IsNullOrWhiteSpace(MailSubject))
                 _mail.Subject = "this is a test email.";

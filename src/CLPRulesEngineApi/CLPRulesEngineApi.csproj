@@ -221,7 +221,9 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
+    <None Include="Properties\PublishProfiles\XPOINTUAT1.uat.xpo.pvt.d%24.Xpo.Edi.RulesEngineApi.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -296,7 +298,7 @@
       <Name>CLPInterfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\CLPRules\CLPRules.csproj">
-      <Project>{57359F32-752F-4131-954F-EBC90CD11469}</Project>
+      <Project>{57359f32-752f-4131-954f-ebc90cd11469}</Project>
       <Name>CLPRules</Name>
     </ProjectReference>
   </ItemGroup>

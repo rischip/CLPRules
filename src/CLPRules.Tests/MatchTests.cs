@@ -18,6 +18,8 @@ namespace CLPRules.Tests
             Assert.IsFalse(ruleComparer.Match<string>("oemcopiwecmwc", @"^oem\w*wec\w*\;$"));
             Assert.IsTrue(ruleComparer.Match<string>("oemcopiwecmwc", @"(?:copiwec)"));
             Assert.IsFalse(ruleComparer.Match<string>("oemcopiwecmwc", @"(?:oemI)"));
+
+            Assert.IsTrue(ruleComparer.Match<string>("119197393146723", @"\b1191973\w*"));
         }
     }
 }
